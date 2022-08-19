@@ -1,0 +1,27 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: dev-team
+  namespace: api
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/wcarlsen/fluxworkshop-tenant
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: dev-team
+  namespace: api
+spec:
+  interval: 1m0s
+  path: ./
+  prune: false
+  serviceAccountName: dev-team
+  sourceRef:
+    kind: GitRepository
+    name: dev-team
+

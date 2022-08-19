@@ -4,4 +4,4 @@ metadata:
   name: dev-team
   namespace: api
 spec:
-  path: ./staging
+  path: ./dev

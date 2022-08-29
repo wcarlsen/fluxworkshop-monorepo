@@ -19,7 +19,7 @@ metadata:
 spec:
   interval: 1m0s
   path: ./
-  prune: false
+  prune: true
   serviceAccountName: dev-team
   sourceRef:
     kind: GitRepository
